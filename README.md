@@ -35,7 +35,7 @@ Conversify is a feature-rich chat application designed for seamless communicatio
 ## 💻 Technologies Used
 
 ### 🖥️ Frontend:
-- 🚀 **Next.js**
+- 🚀 **React.js**
 - 🛠️ **Redux:** For efficient state management.
 - 📂 **Cloudinary:** Simplifying media management.
 
