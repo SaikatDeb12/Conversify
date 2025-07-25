@@ -8,13 +8,7 @@
 
 ![Conversify Screenshot 4](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922857/projects/conversify/rorwndcerjdrfgr1sdp7.png)
 
-![Conversify Screenshot 5](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922857/projects/conversify/du5jg4utfmvmnsg0w9vf.png)
-
-![Conversify Screenshot 6](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922858/projects/conversify/pbvnp0o1mp3idbxrnvpv.png)
-
 ![Conversify Screenshot 7](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922857/projects/conversify/tzpmefh4kwn0o1lhhaqf.png)
-
-![Conversify Screenshot 8](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922859/projects/conversify/ysppkz1dvg8cslovmeoc.png)
 
 ![Conversify Screenshot 9](https://res.cloudinary.com/dvovo1lfg/image/upload/v1733922859/projects/conversify/ld2zs86q0igxxxrzewi2.png)
 
