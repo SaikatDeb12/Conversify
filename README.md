@@ -38,40 +38,6 @@ Conversify is a feature-rich chat application designed for seamless communicatio
 - 📡 **Express.js**
 - 🗄️ **MongoDB:** Reliable database management.
 
-## Installation
-
-1. Clone the repository:
-
-```
-git clone https://github.com/Sourav-Goyal19/Conversify.git
-```
-
-2. Install dependencies:
-
-```
-cd Conversify
-cd client 
-npm install
-```
-
-
-```
-cd Conversify
-cd server 
-npm install
-```
-3. Start the frontend and backend servers:
-
-  - Start frontend server
-  ```
-  npm run dev
-  ```
-  - Start backend server
-  ```
-  npm start
-  ```
-
-4. Access the application locally via `http://localhost:3000/`
 
 ## Live Demo
 
