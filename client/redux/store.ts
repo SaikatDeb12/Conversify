@@ -3,10 +3,10 @@ import userSlice from "./slices/user/user/userSlice";
 import socketSlice from "./slices/socket/socketSlice";
 
 export const store = configureStore({
-  reducer: {
-    user: userSlice,
-    socket: socketSlice,
-  },
+    reducer: {
+        user: userSlice,
+        socket: socketSlice,
+    },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

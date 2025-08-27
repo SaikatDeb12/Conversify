@@ -1,4 +1,6 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -13,7 +15,6 @@ const messageRouter = require("./routes/message.routes");
 const passportConfig = require("./services/passport");
 const passport = require("passport");
 const session = require("express-session");
-const bodyParser = require("body-parser");
 const User = require("./models/user");
 const usersRouter = require("./routes/users.routes");
 const settingsRouter = require("./routes/settings.routes");
@@ -21,37 +22,37 @@ const settingsRouter = require("./routes/settings.routes");
 passportConfig(passport);
 
 app.use(
-  cors({
-    origin: ["https://newconversify.vercel.app", "http://localhost:3000"],
-    credentials: true,
-  })
+    cors({
+        origin: ["https://newconversify.vercel.app", "http://localhost:3000"],
+        credentials: true,
+    }),
 );
 
 app.use(
-  session({
-    secret: "SouravG",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      secure: true,
-      sameSite: "none",
-      maxAge: 3 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    },
-  })
+    session({
+        secret: "SaikatD",
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            secure: true,
+            sameSite: "none",
+            maxAge: 3 * 24 * 60 * 60 * 1000,
+            httpOnly: true,
+        },
+    }),
 );
 
 mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    console.log("MongoDB Connected Successfully");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    .connect(process.env.MONGO_URL)
+    .then(() => {
+        console.log("MongoDB Connected Successfully");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -65,25 +66,25 @@ app.use("/api/conversations", conversationRouter);
 app.use("/api/settings", settingsRouter);
 
 app.get("/authorization", async (req, res) => {
-  const userToken = req.cookies?.token;
-  if (!userToken) return res.status(401).json({ msg: "Unauthorized" });
-  const jwtUser = getUser(userToken);
-  const user = await User.findOne({ email: jwtUser.email });
-  if (!user) return res.status(401).json({ msg: "Unauthorized" });
-  return res.status(200).json({ user, msg: "Authorized" });
+    const userToken = req.cookies?.token;
+    if (!userToken) return res.status(401).json({ msg: "Unauthorized" });
+    const jwtUser = getUser(userToken);
+    const user = await User.findOne({ email: jwtUser.email });
+    if (!user) return res.status(401).json({ msg: "Unauthorized" });
+    return res.status(200).json({ user, msg: "Authorized" });
 });
 
 app.get("/", (req, res) => {
-  return res.send("Hello World!");
+    return res.send("Hello World!");
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`Server Started at ${PORT}`);
+    console.log(`Server Started at ${PORT}`);
 });
 
 const io = require("socket.io")(server, {
-  pingTimeout: 60000,
-  cors: {
-    origin: "*", // Allow requests from any origin for Socket.IO
-  },
+    pingTimeout: 60000,
+    cors: {
+        origin: "*", // Allow requests from any origin for Socket.IO
+    },
 });
